@@ -6,4 +6,4 @@ En este punto, también podemos utilizar un StatelessWidget. Para mostrar una li
 
 2. Agrega interacción a la lista para mostrar un mensaje emergente (Snackbar) cuando se seleccione un elemento de la lista.
 
-Para lograr esto, puedes envolver cada elemento de la lista con un widget GestureDetector y utilizar su propiedad onTap para mostrar el mensaje emergente cuando se seleccione un elemento.
+Para lograr esto, puedes envolver cada elemento de la lista con un widget GestureDetector y utilizar su propiedad onTap para mostrar el mensaje emergente cuando se seleccione un elemento, o otras maneras que se te ocurran.

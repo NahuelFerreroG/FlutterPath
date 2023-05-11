@@ -26,7 +26,14 @@ class HomeScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   IconButton(
-                    onPressed: (){}, 
+                    onPressed: (){
+                      final snackBar = SnackBar(
+                        content: Text(icon.toString()),
+                        duration: const Duration(seconds: 1),
+                      );
+
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    }, 
                     icon: Icon(icon)
                   ),
             
