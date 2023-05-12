@@ -2,8 +2,9 @@ import 'package:ejercicio3/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class DetailsScreen extends StatelessWidget {
-  const DetailsScreen({super.key});
+  const DetailsScreen({super.key, required this.text});
 
+final String text;
 
 
 void openDetails(BuildContext context) {
@@ -12,7 +13,7 @@ void openDetails(BuildContext context) {
     barrierDismissible: false, 
     builder: (context) => AlertDialog(
       title: const Text('Details'),
-      content: const Text('Id deserunt ad cupidatat in laborum veniam fugiat culpa consequat laboris aliquip.'),
+      content: Text(text),
       actions: [
         ElevatedButton(
           child: const Text('Salir'),

@@ -1,8 +1,16 @@
 import 'package:ejercicio3/presentation/screens/details_screen.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+
+  TextEditingController textEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -11,17 +19,37 @@ class HomeScreen extends StatelessWidget {
         title: const Text('Ejercicio 3 - HomeScreen'),
         leading: const Icon(Icons.house_outlined),
       ),
-      body: const Center(
-        child: Card(
-          shadowColor: Colors.black,
-          color: Colors.black12,
-          elevation: 15,
-          child: Text('esta es la pantalla de inicio'))
+      
+      
+      body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            
+            TextField(
+              controller: textEditingController,
+              decoration: const InputDecoration(
+                labelText: 'Ingrese un texto'
+              ),
+            ),
+
+            const SizedBox(height: 10),
+
+            ElevatedButton(
+              onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsScreen(text: textEditingController.text)));},
+              child: const Text('Enviar'),
+            )
+
+          ],
+        )
       ),
+     
+     
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.arrow_forward),
         onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context)=>const DetailsScreen()));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const DetailsScreen(text: '',)));
         })
     );
   }
