@@ -1,3 +1,5 @@
+import 'package:ejercicio5/config/router/app_router.dart';
+import 'package:ejercicio5/config/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,12 +11,11 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+
+    return MaterialApp.router(
+      routerConfig: appRouter,
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme(isDarkMode: false, selectedColor:1 ).getTheme(),
     );
   }
 }
